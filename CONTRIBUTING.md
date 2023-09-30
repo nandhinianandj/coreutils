@@ -154,7 +154,14 @@ cargo nextest run --features unix --no-fail-fast
 To debug:
 
 ```shell
-gdb --args target/debug/coreutils ls
+rust-gdb --args target/debug/coreutils ls
+(gdb) b ls.rs:79
+(gdb) run
+```
+
+To debug with arguments
+```shell
+rust-gdb --args target/debug/coreutils ls -al
 (gdb) b ls.rs:79
 (gdb) run
 ```
